@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,4 +25,7 @@ public class Cours {
     TypeCours typeCours;
     @Enumerated(EnumType.STRING)
     Support support;
+    @OneToMany(mappedBy = "cours", fetch = FetchType.EAGER)
+    Set<Inscription> inscriptions;
+
 }

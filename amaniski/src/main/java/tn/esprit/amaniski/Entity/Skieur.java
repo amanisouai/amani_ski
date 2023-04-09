@@ -1,6 +1,6 @@
 package tn.esprit.amaniski.Entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -25,4 +26,11 @@ public class Skieur {
     String prenomS;
     LocalDate dateNaissance;
     String ville;
+    @ManyToMany(mappedBy = "skieurs")
+    Set<Piste> pistes;
+    @OneToOne
+    Abonnement abonnement;
+    @OneToMany(mappedBy = "skieur")
+    Set<Inscription>Inscriptions;
+
 }
