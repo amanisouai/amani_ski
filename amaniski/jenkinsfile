@@ -7,6 +7,16 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/amanisouai/amani_ski.git'
             }
         }
+        stage('Build') {
+            steps {
+                echo 'skip'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'skip'
+            }
+        }
         stage('Display Date') {
             steps {
                 sh 'echo "System date: $(date)"'
