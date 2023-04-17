@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Build') {
             steps {
-                env.PATH = "${env.PATH}:${WORKSPACE}"
                 sh './amaniski/mvnw clean package'
             }
         }
