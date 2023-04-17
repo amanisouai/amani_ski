@@ -17,9 +17,9 @@ pipeline {
                 sh './mvnw test'
             }
         }
-        stage('Deploy') {
+        stage('Display Date') {
             steps {
-                sh 'nohup java -jar target/my-app.jar > /dev/null 2>&1 &'
+                sh 'date'
             }
         }
     }
