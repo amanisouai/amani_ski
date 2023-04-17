@@ -1,5 +1,6 @@
 package tn.esprit.amaniski.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Cours {
     @Enumerated(EnumType.STRING)
     Support support;
     @OneToMany(mappedBy = "cours", fetch = FetchType.EAGER)
+    @JsonIgnore
     Set<Inscription> inscriptions;
 
 }
