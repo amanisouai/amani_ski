@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '.mvnw clean package'
+                sh '/usr/bin/mvnw clean package'
             }
         }
         stage('Test') {
             steps {
-                sh '.mvnw test'
+                sh '/usr/bin/mvnw test'
             }
         }
         stage('Display Date') {
