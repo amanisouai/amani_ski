@@ -7,14 +7,10 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/amanisouai/amani_ski.git'
             }
         }
-        stage('Build') {
+        stage('Testing maven') {
+       
             steps {
-                echo 'skip'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'skip'
+                sh """mvn -version"""
             }
         }
         stage('Display Date') {
