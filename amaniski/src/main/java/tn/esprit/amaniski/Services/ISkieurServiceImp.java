@@ -1,6 +1,7 @@
 package tn.esprit.amaniski.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tn.esprit.amaniski.Entity.Piste;
 import tn.esprit.amaniski.Entity.Skieur;
 import tn.esprit.amaniski.Entity.TypeAbonnement;
@@ -8,7 +9,7 @@ import tn.esprit.amaniski.Repositories.PisteRepository;
 import tn.esprit.amaniski.Repositories.SkieurRepository;
 
 import java.util.List;
-
+@Service
 public class ISkieurServiceImp implements IskieurService {
     @Autowired
     SkieurRepository skieurRepository;
